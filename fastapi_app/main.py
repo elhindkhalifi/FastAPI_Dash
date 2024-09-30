@@ -30,6 +30,12 @@ users= {"admin":"password"}
 async def home_page(request:Request):
     return templates.TemplateResponse("home.html", {"request":request})
 
+@app.get("/login")
+async def login_page(request:Request):
+    return templates.TemplateResponse("login.html", {"request":request})
+
+
+
 if __name__=='__main__':
     uvicorn.run(app,host='0.0.0.0', port=8001, workers=1)
     
